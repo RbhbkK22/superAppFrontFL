@@ -13,16 +13,16 @@ class LoginScreen extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(10)
+            borderRadius: BorderRadius.circular(10),
           ),
-          child: Column(children: [
-            TextField(decoration: InputDecoration(
-
-            ),),
-            TextField()
-          ],),
-        )
-
-    ],);
+          child: Column(
+            children: [
+              TextField(decoration: InputDecoration()),
+              TextField(),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }
