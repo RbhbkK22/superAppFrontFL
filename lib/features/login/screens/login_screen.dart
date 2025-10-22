@@ -25,12 +25,12 @@ class LoginScreen extends StatelessWidget {
             children: [
               UiInput(
                 hintText: 'login',
-                theme: CustomThemeManager.getTheme('loginInput'),
+                theme: CustomThemeManager.getTheme<UiInputTheme>('loginInput'),
               ),
               Divider(),
               UiSecretInput(
                 hintText: 'password',
-                theme: CustomThemeManager.getTheme('loginInput'),
+                theme: CustomThemeManager.getTheme<UiInputTheme>('loginInput'),
               ),
             ],
           ),
