@@ -8,15 +8,28 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     return Column(
+      spacing: 12,
       mainAxisAlignment: MainAxisAlignment.center,
-      spacing: 24,
       children: [
-        Text('Sign in to your Account'),
+        Text(
+          'Sign in to your Account',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white, fontSize: 24),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            'Create account',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              decoration: TextDecoration.underline,
+              decorationColor: Colors.white,
+            ),
+          ),
+        ),
         Container(
-          width: screenSize.width * 0.8,
-          constraints: BoxConstraints(maxWidth: 500),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -34,6 +47,32 @@ class LoginScreen extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        SizedBox(height: 12,),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            'Forget Password',
+            style: TextStyle(
+              color: Colors.white,
+              decoration: TextDecoration.underline,
+              decorationColor: Colors.white,
+            ),
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          style: ButtonStyle(
+            minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
+            backgroundColor: WidgetStatePropertyAll(Colors.blueAccent),
+            shape: WidgetStatePropertyAll(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide.none,
+              ),
+            ),
+          ),
+          child: const Text('Log In', style: TextStyle(color: Colors.white)),
         ),
       ],
     );
