@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:supper_app/core/repositoryes/auth_repo.dart';
 import 'package:supper_app/core/routers.dart';
 import 'package:supper_app/core/themes.dart';
+import 'package:supper_app/features/login/bloc/auth_bloc.dart';
 
 void main() {
   CustomThemeManager.initialize();
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  MainApp({super.key});
+
+  AuthRepo authRepo = AuthRepoImpl();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (context) => AuthBloc(authRepo))],
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: router,
+      ),
     );
   }
 }
-
